@@ -1,0 +1,48 @@
+
+<!-- Added a loader image for when data is not yet loaded -->
+<div *ngIf="postDetails == ''" class="center">
+    <img src="assets\Loading_icon.gif" width="100px"/>
+</div>
+
+<div *ngIf="postDetails !== ''">
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Post</th>
+    </tr>
+
+    <!-- Binding the post details object using data binding   -->
+    <tr>
+        <td>{{postDetails.id}}</td>
+        <td>{{postDetails.title}}</td>
+        <td>{{postDetails.body}}</td>
+    </tr>
+</table>
+
+<!-- Added a toggle button to switch between the comment section views: 'Comments' and 'All comments' -->
+<div class="toggle-comments">
+    <button [class]="activebuttonData == 'Comments'?'active':''" (click)="activeButton('Comments')">Comments</button>
+    <button [class]="activebuttonData == 'AllComments'?'active':''" (click)="activeButton('AllComments')">All Comments</button>
+</div>
+
+<table border="1">
+    <tr>
+        <th>PostId</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Comments</th>
+    </tr>
+
+    <!-- Binding comments array here using Ngfor  -->
+    <tr *ngFor="let object of PostComments">
+        <th>{{object.postId}}</th>
+        <td>{{object.id}}</td>
+        <td>{{object.name}}</td>
+        <td>{{object.email}}</td>
+        <td>{{object.body}}</td>
+    </tr>
+</table>
+</div>
+

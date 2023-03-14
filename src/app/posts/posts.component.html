@@ -1,0 +1,25 @@
+<!-- Added a loader image for when data is not yet loaded -->
+<div *ngIf="!posts.length" class="center">
+    <img src="assets\Loading_icon.gif" width="100px"/>
+</div>
+
+
+<table border="1" *ngIf="posts.length" >
+    <tr>
+        <th>UserId</th>
+        <th>Id</th>
+        <th>Title</th>
+        <th>Post</th>
+        <th>Action</th>
+    </tr>
+    <tr *ngFor="let object of posts">
+        <th>{{object.userId}}</th>
+        <td>{{object.id}}</td>
+        <td>{{object.title}}</td>
+        <td (click)="showPostDetails(object.id)">{{object.body}}</td>
+        <td>Delete</td>
+    </tr>
+</table>
+
+
+

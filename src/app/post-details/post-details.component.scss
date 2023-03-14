@@ -1,0 +1,23 @@
+.toggle-comments{
+    position: relative;
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    button{
+        width: 100px;
+        height: 40px;
+        border: unset;
+    }
+    .active{
+        color: white;
+        background-color: green;
+    }
+    button:first-child{
+        border-bottom-left-radius: 8px;
+        border-top-left-radius: 8px;
+    }
+    button:last-child{
+        border-bottom-right-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+}
