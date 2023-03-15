@@ -3,7 +3,7 @@
   <img src="assets\Loading_icon.gif" width="100px" />
 </div>
 
-<div class="center">
+<div class="center" *ngIf="postDetails !== ''">
   <div class="card border mb-3">
     <div class="previous" (click)="backToPosts()">
         <img src="assets/back.png" alt="" width="40px" height="40px">
