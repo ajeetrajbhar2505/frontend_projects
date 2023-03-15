@@ -41,6 +41,8 @@
           </div>
         </div>
       </div>
+
+<!-- Added a conditional click to switch between the comment section views: 'Load More comments' and 'Show less comments' -->
       <p class="card-text"><small class="text-muted" (click)="activebuttonData == 'Comments'?activeButton('AllComments'):activeButton('Comments')">{{activebuttonData == 'Comments'?'Load More comments':'Show less comments'}}</small></p>
     </div>
   </div>
