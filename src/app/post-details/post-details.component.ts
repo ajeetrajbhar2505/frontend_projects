@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-details',
@@ -13,7 +13,7 @@ export class PostDetailsComponent implements OnInit {
   PostComments:any = []
   activebuttonData:any = 'Comments'
   id:any = ''
-  constructor(public http: HttpClient, public activatedRoute: ActivatedRoute) {}
+  constructor(public http: HttpClient, public activatedRoute: ActivatedRoute,public router:Router) {}
 
   ngOnInit(): void {
     this.id = this.activatedRoute.snapshot.params['id'];
@@ -42,6 +42,12 @@ export class PostDetailsComponent implements OnInit {
     return
     }
     this.getPostComments(this.id)
+  }
+
+
+  backToPosts()
+  {
+    this.router.navigate(['posts'])
   }
 
 

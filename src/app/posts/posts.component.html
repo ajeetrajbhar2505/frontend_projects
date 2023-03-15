@@ -3,23 +3,25 @@
     <img src="assets\Loading_icon.gif" width="100px"/>
 </div>
 
-
-<table border="1" *ngIf="posts.length" >
-    <tr>
-        <th>UserId</th>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Post</th>
-        <th>Action</th>
-    </tr>
-    <tr *ngFor="let object of posts">
-        <th>{{object.userId}}</th>
-        <td>{{object.id}}</td>
-        <td>{{object.title}}</td>
-        <td class="cursor" (click)="showPostDetails(object.id)">{{object.body}}</td>
-        <td>Delete</td>
-    </tr>
-</table>
-
-
-
+<div class="center">
+    <div class="card border mb-3" *ngFor="let object of posts">
+        <div class="card-header">
+            <div class="post-avatar">
+                <img src="assets/user.png" alt="">
+                <span class="post-fullname">[postID: {{object.id}}]</span> 
+                <span class="post-username"> @userID: {{object.userId}}</span>
+            </div>
+        </div>
+        <div class="card-body" style="padding: unset;cursor:pointer">
+          <div class="post" (click)="showPostDetails(object.id)">
+            <img src="https://via.placeholder.com/600/8985dc" alt="">
+          </div>
+          <div class="post-action-list">
+            <img src="assets/heart.png" alt="">
+            <img src="assets/comment.png" alt="">
+            <img src="assets/share.png" alt="">
+          </div>
+          <p class="card-text"><small class="text-muted">View all comments</small></p>
+        </div>
+      </div>    
+</div>

@@ -1,48 +1,47 @@
-
 <!-- Added a loader image for when data is not yet loaded -->
 <div *ngIf="postDetails == ''" class="center">
-    <img src="assets\Loading_icon.gif" width="100px"/>
+  <img src="assets\Loading_icon.gif" width="100px" />
 </div>
 
-<div *ngIf="postDetails !== ''">
-<table border="1">
-    <tr>
-        <th>Id</th>
-        <th>Title</th>
-        <th>Post</th>
-    </tr>
+<div class="center">
+  <div class="card border mb-3">
+    <div class="previous" (click)="backToPosts()">
+        <img src="assets/back.png" alt="" width="40px" height="40px">
+    </div>
+    <div class="card-header">
+      <div class="post-avatar">
+        <img src="assets/user.png" alt="" />
 
-    <!-- Binding the post details object using data binding   -->
-    <tr>
-        <td>{{postDetails.id}}</td>
-        <td>{{postDetails.title}}</td>
-        <td>{{postDetails.body}}</td>
-    </tr>
-</table>
-
-<!-- Added a toggle button to switch between the comment section views: 'Comments' and 'All comments' -->
-<div class="toggle-comments">
-    <button [class]="activebuttonData == 'Comments'?'active':''" (click)="activeButton('Comments')">Comments</button>
-    <button [class]="activebuttonData == 'AllComments'?'active':''" (click)="activeButton('AllComments')">All Comments</button>
+        <!-- Binding the post details object using data binding   -->
+        <span class="post-fullname">[postID: {{ postDetails.id }}]</span>
+        <span class="post-username"> @userID: {{ postDetails.userId }}</span>
+      </div>
+    </div>
+    <div class="card-body" style="padding: unset; cursor: pointer">
+      <div class="post">
+        <img src="https://via.placeholder.com/600/8985dc" alt="" />
+      </div>
+    </div>
+    <div class="card-footer">
+      <div class="post-action-list">
+        <img src="assets/heart.png" alt="" />
+        <img src="assets/comment.png" alt="" />
+        <img src="assets/share.png" alt="" />
+      </div>
+      <p class="card-text"><small class="text-muted">comments</small></p>
+      <div class="comments">
+        <!-- Binding comments array here using Ngfor  -->
+        <div class="pl-1 pb-1" *ngFor="let object of PostComments">
+          <div class="post-avatar">
+            <img src="assets/user.png" alt="" />
+            <span class="post-username"> @userID: {{ object.name }}</span>
+          </div>
+          <div class="comment-texts">
+            {{ object.body }}
+          </div>
+        </div>
+      </div>
+      <p class="card-text"><small class="text-muted" (click)="activebuttonData == 'Comments'?activeButton('AllComments'):activeButton('Comments')">{{activebuttonData == 'Comments'?'Load More comments':'Show less comments'}}</small></p>
+    </div>
+  </div>
 </div>
-
-<table border="1">
-    <tr>
-        <th>PostId</th>
-        <th>Id</th>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Comments</th>
-    </tr>
-
-    <!-- Binding comments array here using Ngfor  -->
-    <tr *ngFor="let object of PostComments">
-        <th>{{object.postId}}</th>
-        <td>{{object.id}}</td>
-        <td>{{object.name}}</td>
-        <td>{{object.email}}</td>
-        <td>{{object.body}}</td>
-    </tr>
-</table>
-</div>
-

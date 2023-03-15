@@ -1,16 +1,88 @@
 /* You can add global styles to this file, and also import other style files */
-table{
-    border-collapse: collapse;
+.center {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
-tr,th,td{
-    padding: 5px;
+.post img {
+  width: -webkit-fill-available;
+  height: 240px;
+}
+.card {
+  width: 500px;
+}
+.post-username {
+  font-weight: bold;
+  font-size: 14px;
+  color: #b1bbc3;
+  padding: 0px;
 }
 
-.center{
-    position: absolute;
-    top: 50%;
-    left: 50%;
+.post-fullname {
+  font-weight: bold;
+  font-size: 14px;
+  color: #292f33;
+  padding: 0px;
 }
-.cursor{
-    cursor: pointer;
+
+.card-text {
+  padding: 5px;
+}
+
+.post-avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.post-action-list {
+  display: flex;
+  gap: 20px;
+  line-height: 18px;
+  margin-left: 8px;
+  margin-top: 10px;
+  color: #292f33;
+}
+
+.post-action-list img {
+  width: 30px;
+  height: 30px;
+}
+
+.text-muted {
+  cursor: pointer;
+}
+
+.comments {
+  height: 220px;
+  overflow: auto;
+}
+
+.previous
+{
+  position: absolute;
+  left: -68px;
+  top: -14px;
+  padding: 20px;
+}
+
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
 }
