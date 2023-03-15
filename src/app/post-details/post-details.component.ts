@@ -44,7 +44,7 @@ export class PostDetailsComponent implements OnInit {
     this.getPostComments(this.id)
   }
 
-
+  // Navigate to the posts page 
   backToPosts()
   {
     this.router.navigate(['posts'])
