@@ -12,6 +12,15 @@
 .card {
   width: 500px;
 }
+
+@media screen and (max-width:528px) {
+  .card {
+    width: 100%;
+  }
+  .previous{
+    display: none;
+  }
+}
 .post-username {
   font-weight: bold;
   font-size: 14px;
